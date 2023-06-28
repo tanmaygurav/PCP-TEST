@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PCP</title>
+</head>
+
+<body>
+    <button id="btn" onclick=logJSONData();>Click me!</button>
+
+    <script>
+        async function logJSONData() {
+            const url="https://script.google.com/macros/s/AKfycbzTDiLw6u5TpubueVSqf2qvKQjwSRSZbad6phyrb-fVSmrlgAZHWD3EFY61qTVvQIJ14Q/exec"
+            const response = await fetch(url);
+            const jsonData = await response.text();
+            document.getElementById('btn').innerText=(jsonData)
+            console.log(jsonData);
+        }
+    </script>
+</body>
+
+</html>
